@@ -15,7 +15,7 @@ Update Program.cs to work with Spa by adding the following lines
 ```csharp
 builder.Services.AddSpaStaticFiles(config => {
 	// you can name this whatever you'd like, but it needs to match the name of the directory you use with the adapter-static pages and assets
-    config.RootPath = "client/build";
+	config.RootPath = "client/build";
 });
 
 app.UseSpaStaticFiles();
@@ -51,11 +51,11 @@ Update the adapter in the svelte config file
 import adapter from '@sveltejs/adapter-static';
 
 export default {
-    kit: {
+	kit: {
 		adapter: adapter({
 			fallback: '200.html',
 			prerender: { entries: [] },
-            // Automatically build pages and assets to the client/build directory located in our ASP.NET Core Web App
+			// Automatically build pages and assets to the client/build directory located in our ASP.NET Core Web App
 			// Change the directory names if you picked a different directory for config.RootPath when calling `builder.Services.AddSpaStaticFiles` on your server
 			pages: '../Server/Server/client/build',
 			assets: '../Server/Server/client/build'
